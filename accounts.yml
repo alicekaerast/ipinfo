@@ -1,0 +1,4 @@
+accounts:
+  - cidr: 192.168.100.0/24
+    account: aws-example-prod
+    description: Alice's VPC
