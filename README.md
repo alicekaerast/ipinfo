@@ -12,7 +12,3 @@ ipinfo will then perform a few things:
 3. Find a Network Interface with the given IP
 4. Print a description if set
 5. Get a Name tag of the associated EC2 instance if an instanceID is found
-
-## Known Issues
-
-* If you don't have valid keys for the AWS_PROFILE that gets set, you'll just see `Network interface not found`. Generate these keys and try again.
