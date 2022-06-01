@@ -5,6 +5,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ec2"
+	"github.com/aws/aws-sdk-go/service/sts"
 	"github.com/urfave/cli/v2"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
@@ -52,6 +53,14 @@ func main() {
 			}
 
 			sess := session.Must(session.NewSession(&aws.Config{Region: aws.String("eu-west-1")}))
+			stsClient := sts.New(sess)
+			_, err = stsClient.GetCallerIdentity(&sts.GetCallerIdentityInput{})
+			if err != nil {
+				fmt.Println(err)
+				fmt.Println("You may need to generate new keys for the listed account")
+				os.Exit(1)
+			}
+
 			ec2Client := ec2.New(sess)
 
 			filters := make([]*ec2.Filter, 0)
