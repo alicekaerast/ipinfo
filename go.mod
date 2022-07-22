@@ -3,7 +3,7 @@ module github.com/alicekaerast/ipinfo
 go 1.18
 
 require (
-	github.com/aws/aws-sdk-go v1.44.56
+	github.com/aws/aws-sdk-go v1.44.61
 	github.com/urfave/cli/v2 v2.11.0
 	gopkg.in/yaml.v2 v2.4.0
 )
