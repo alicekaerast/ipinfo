@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/aws/aws-sdk-go v1.44.142
-	github.com/urfave/cli/v2 v2.23.2
+	github.com/urfave/cli/v2 v2.23.5
 	gopkg.in/yaml.v2 v2.4.0
 )
 
